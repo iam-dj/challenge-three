@@ -1,23 +1,22 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword(password) {
+  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
+generateBtn.addEventListener("click", function(){
+    var password = generate();
+    writePassword(password);
+});
 var pwd = {};
 
-console.log(pwd);
+pwd.newPassword = "";
 
 pwd.UpperSpecialLower =
   "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+";
@@ -32,16 +31,16 @@ length();
 
 function length() {
   pwd.passwordLength = prompt(
-    "Please enter the length of your password (between 5 and 15 characters):"
+    "Please enter the length of your password (between 21 and 42 characters):"
   );
 
-  if (pwd.passwordLength >= 5 && pwd.passwordLength <= 15
+  if (pwd.passwordLength >= 21 && pwd.passwordLength <= 42
   ) {
     alert("Thank you!");
 
     special();
   } else {
-    alert("Invalid input. Please enter a number between 5 and 15.");
+    alert("Invalid input. Please enter a number between 21 and 42.");
 
     length();
   }
@@ -50,7 +49,7 @@ function length() {
 function special() {
   // alert if they want if they y or n store in pwd.special
   pwd.passwordSpecial = prompt(
-    "Please enter 'y' for yes or 'n' for no if you want special characters:"
+    "Please enter 'y' or 'n' if you want special characters:"
   );
 
   if (pwd.passwordSpecial !== "y" && pwd.passwordSpecial !== "n") {
@@ -70,7 +69,7 @@ function special() {
 
 function letters() {
   // alert if they want if they y or n store in pwd.letters
-  pwd.passwordLetters = prompt("Please enter 'y' for yes or 'n' for no if you want letters:");
+  pwd.passwordLetters = prompt("Please enter 'y' or 'n' if you want letters:");
   if (pwd.passwordLetters !== "y" && pwd.passwordLetters !== "n") {
     alert("That wasn't a 'y' or 'n' ");
 
@@ -90,7 +89,7 @@ function letters() {
 function upper() {
   // alert if they want if they y or n store in pwd.lower
   pwd.passwordUpper = prompt(
-    "Please enter 'y' for yes or 'n' for no if you want upper case letters characters:"
+    "Please enter 'y' or 'n' if you want upper case letters characters:"
   );
 
   if (pwd.passwordUpper !== "y" && pwd.passwordUpper !== "n") {
@@ -111,7 +110,7 @@ function upper() {
 function lower() {
   // alert if they want if they y or n store in pwd.upper
   pwd.passwordLower = prompt(
-    "Please enter 'y' for yes or 'n' for no if you want lower case letters:"
+    "Please enter 'y' or 'n' if you want lower case letters:"
   );
 
   if (pwd.passwordLower !== "y" && pwd.passwordLower !== "n") {
@@ -127,11 +126,11 @@ function lower() {
   else {
     alert("We will add lower case letters");
 
-    generatePassword();
+    generate();
   }
 }
 
-function generatePassword() {
+function generate() {
   var password = "";
 
   // UpperSpecialLower
@@ -214,7 +213,7 @@ function generatePassword() {
   else {
     for (var i = 0; i < pwd.passwordLength; i++) {
       var randomIndex = Math.floor(Math.random() * pwd.Upper.length);
-      password = password + pwd.Upper.charAt(randomIndex);
+      password += pwd.Upper.charAt(randomIndex);
     }
   }
   return password;
