@@ -12,7 +12,7 @@ The project fortified skills in web development, such as using JavaScript to man
 
 ## Table of Contents (Optional)
 
-visit link: https://iam-dj.github.io/challenge-three/
+visit link:
 
 ## Installation
 
