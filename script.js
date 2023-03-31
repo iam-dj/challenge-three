@@ -9,9 +9,11 @@ function writePassword() {
   passwordText.value = password;
 }
 
+//setting variables for the haslengthRun so that I can test that to run thought the code
 var haslengthRun = false;
 var pwd = {};
 
+//this tests whether or not the person went through the first questions and if they did it just shows a new random pwd
 generateBtn.addEventListener("click", function () {
   if (!haslengthRun) {
     length();
@@ -20,6 +22,7 @@ generateBtn.addEventListener("click", function () {
   generateBtn.addEventListener("click", writePassword);
 });
 
+//these are all of the characters for the random pwd
 pwd.UpperSpecialLower =
   "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+";
 pwd.LowerSpecial = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+";
@@ -29,6 +32,7 @@ pwd.Lower = "abcdefghijklmnopqrstuvwxyz";
 pwd.Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 pwd.Special = "0123456789!@#$%^&*()_";
 
+//this function asks the user how long they want the pwd to be
 function length() {
   pwd.passwordLength = prompt(
     "Please enter the length of your password (between 8 and 128 characters):"
@@ -45,6 +49,7 @@ function length() {
   }
 }
 
+//this function asks the user if they want special characters
 function special() {
   // alert if they want if they y or n store in pwd.special
   pwd.passwordSpecial = prompt(
@@ -66,6 +71,7 @@ function special() {
   }
 }
 
+//this function asks the user if they want letters
 function letters() {
   // alert if they want if they y or n store in pwd.letters
   pwd.passwordLetters = prompt(
@@ -86,6 +92,7 @@ function letters() {
   }
 }
 
+//this function asks if they want uppercase letters
 function upper() {
   // alert if they want if they y or n store in pwd.lower
   pwd.passwordUpper = prompt(
@@ -107,6 +114,7 @@ function upper() {
   }
 }
 
+//this function asks if they want lowercase letters
 function lower() {
   // alert if they want if they y or n store in pwd.upper
   pwd.passwordLower = prompt(
@@ -130,6 +138,7 @@ function lower() {
   }
 }
 
+//this is where the magic happens it check the parameters for length, special, lower, upper and generates a string of characters that matches your wishes
 function generatePassword() {
   var password = "";
 

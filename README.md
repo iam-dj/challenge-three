@@ -12,7 +12,27 @@ The project fortified skills in web development, such as using JavaScript to man
 
 ## Table of Contents (Optional)
 
+<<<<<<< HEAD
 visit link:
+=======
+visit link: https://iam-dj.github.io/challenge-three/
+
+```md
+![alt text](./assets/images/screenshot1.png)
+    ```
+    ```md
+![alt text](./assets/images/screenshot2.png)
+    ```
+    ```md
+![alt text](./assets/images/screenshot3.png)
+    ```
+    ```md
+![alt text](./assets/images/screenshot4.png)
+    ```md
+![alt text](./assets/images/screenshot5.png)
+    ```
+
+>>>>>>> 1957c8b (update readme and js)
 
 ## Installation
 
